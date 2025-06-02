@@ -1,9 +1,20 @@
-let x=5;
+// Select the form
+const form=document.getElementById('contact');
 
-console.log(5=='5');
-console.log(5==='5');
+//// Listen for form submission
 
-console.log(true && false); 
-console.log(true || false);
+form.addEventListener('submit', function (e) {
+  e.preventDefault(); // Prevent page reload
 
-console.log("hello");
+  // Get input values
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  // Output the result
+  const output = document.getElementById('output');
+  output.textContent = `Thank you, ${name}! We received your message.`;
+
+  // Optional: Clear the form
+  form.reset();
+});
